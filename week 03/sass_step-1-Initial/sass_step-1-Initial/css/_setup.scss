@@ -1,0 +1,14 @@
+//website setup variables, mixins and extend  definition
+// variables
+$base: #000;
+$accent:  #C2CF00;
+$basefont:"Trebuchet MS", san-serif;
+
+@mixin rounded($radius:7px){
+border-radius: $radius;
+behavior: url(PIE.htc);
+}
+
+@mixin tabs ($radius: 10px){
+  border-radius: $radius $radius 0 0;
+}
