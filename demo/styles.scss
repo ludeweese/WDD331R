@@ -1,0 +1,108 @@
+//variables
+
+//colors
+$body-background-color: darkred;
+$form-background-color: tan;
+$input-color: white;
+$headlines-color : white;
+         
+
+// Define SCSS variables
+$body-background-color: darkred;
+
+// Apply variable to body background color
+body {
+    background-color: $body-background-color;
+}
+
+// Breakpoints
+$break-small: 576px;
+$break-medium: 768px;
+$break-large: 992px;
+
+#contactform {
+    background-color: $form-background-color;
+
+    input, textarea {
+        background-color: $input-color;
+        flex: 2;
+    }
+
+    @media (min-width: $break-small) {
+        & {
+            width: 90%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto; 
+        } 
+    }
+
+    @media (min-width: $break-large) {
+        & {
+            width: 70%;
+            max-width: 900px;
+        }
+    }
+}
+
+//define mixin
+@mixin flex-container($axis, $wrap: nowrap) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: $axis $wrap;
+    -ms-flex-flow: $axis $wrap;
+    flex-flow: $axis $wrap;
+}
+
+@mixin center($width: 90%, $max-width: 960px) {
+    width: $width;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//using mixin
+fieldset > div {
+    @include flex-container(column);        
+}
+
+#content {
+    @include center;
+}
+
+//Define Breakpoint Mixin
+// Set breakpoint sizes
+$break-small: 20em;
+$break-medium: 31em;
+$break-large: 60em;
+
+@mixin breakpoint($break) {
+    @if $break == large {
+        @media (max-width: $break-large) { @content; }
+    }
+    @else if $break == medium {
+        @media (max-width: $break-medium) { @content; }
+    }
+    @else if $break == small {
+        @media (max-width: $break-small) { @content; }
+    } 
+    @else {
+        @media (#{$break}) { @content; }
+    }
+}
+
+//Use Breakpoint Mixin
+body {
+    background: darkred;
+    
+    @include breakpoint(large) { background: red; }
+    @include breakpoint(medium) { background: cyan; }
+    @include breakpoint(small) { background: green; }
+    @include breakpoint("max-width: 480px") { background: darkred; }
+}
+
+h1 {
+    color: $headlines-color;
+}
