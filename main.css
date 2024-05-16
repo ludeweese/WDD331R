@@ -1,7 +1,4 @@
-/***** Importing Google Font Lora *****/
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
-
-/****** Global Styles *****/
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 body {
   font-family: Helvetica, Arial, sans-serif;
   color: #333;
@@ -10,178 +7,170 @@ body {
 }
 
 h1, h2 {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }
 
-/***** Header Styles *****/
 header {
   padding: 30px;
   display: flex;
-  flex-direction: column; /* Change flex direction to column */
+  flex-direction: column;
   text-align: center;
 }
-
 header h1 {
   margin: 0;
   color: #000;
   font-size: 60px;
 }
-
 header h1 a {
   text-decoration: none;
   color: inherit;
 }
-
-nav {
-  padding:10px;
-  margin-top: 20px;
+header::after {
+  content: "";
   width: 100%;
-  font-size: 24px; 
-  border-top: 1px solid #d0d0d0; /* Add border top for navigation */
+  height: 1px;
+  background-color: #d0d0d0;
+  margin-top: 5px;
 }
 
+nav {
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 24px;
+  border-top: 1px solid #d0d0d0;
+}
 nav ul {
   list-style-type: none;
   padding: 0;
   display: flex;
-  justify-content: flex-end; /* Align items to the right */
+  justify-content: flex-end;
 }
-
-nav li {
-  margin-left: 20px; /* Add margin to separate items */
-  
+nav ul li {
+  margin-left: 20px;
 }
-
-nav li:first-child {
-  margin-left: auto; /* Pushes the first item to the right */
+nav ul li:first-child {
+  margin-left: auto;
 }
-
-nav a {
+nav ul li a {
   text-decoration: none;
   color: #666;
-  text-transform: uppercase; /* Transform text to uppercase */
-  letter-spacing: 5px; 
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
-
-nav a:hover {
+nav ul li a:hover {
   color: #00ddff;
 }
 
-/***** Add horizontal line after title *****/
 header::after {
-  content: '';
+  content: "";
   width: 100%;
   height: 1px;
   background-color: #d0d0d0;
-  margin-top: 5px; /* Add margin top for space */
+  margin-top: 5px;
 }
 
-/***** Article Styles *****/
 article {
   display: flex;
   border-bottom: 1px solid #d0d0d0;
 }
-article a {
+article .post-date {
+  color: #333;
+  width: 150px;
+  margin-right: 30px;
+  padding-right: 30px;
+  border-right: 1px solid #d0d0d0;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+article .post-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+article h2 a {
   color: #666;
   text-decoration: none;
 }
-article a[href="#"]:last-of-type {
-  font-weight: bold;
+article h2 a:hover {
+  color: #666;
+}
+article p {
+  color: #000;
+}
+article p a {
+  color: #666;
+  text-decoration: none;
+}
+article p a:hover {
+  color: #00ddff;
 }
 
-.post-date {
-  color: #000000;
-  width: 150px; /* Fixed width for date */
-  margin-right: 30px; /* Add margin to separate from content */
-  padding-right: 30px; /* Add padding to create space for vertical line */
-  border-right:1px solid #d0d0d0; /* Add vertical line */
-  text-transform: uppercase; 
-  margin-left: 20px; 
-}
-
-.post-content {
-  padding: 20px;
-  flex-grow: 1; /* Allow content to grow */
-}
-
-/***** Responsive Styles *****/
 @media screen and (max-width: 768px) {
-    header {
-      padding: 10px;
-      flex-direction: column;
-      align-items: center; 
-      text-align: center; 
-    }
-  
-    header h1 {
-      font-size: 60px; /* Maintain the same font size */
-      white-space: normal; /* Allow title to wrap */
-      line-height: 1.2; /* Ensure proper line height */
-    }
-  
-    nav {
-      margin-top: 10px;
-      padding: 10px;
-      border: none;
-      text-align: center; /* Center align navigation */
-      display: flex;
-      justify-content: center; /* Center align nav items */
-      position: relative;
-    }
-  
-    nav::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: -5px; /* Margin top */
-      border-top: 1px solid #d0d0d0; /* Border top */
-    }
-  
-    nav ul {
-      margin: 0;
-      display: flex;
-      flex-direction: column; /* Stack navigation links vertically */
-      align-items: center; /* Center align navigation links */
-    }
-  
-    nav li {
-      margin-bottom: 10px; /* Increase spacing between navigation links */
-      position: relative; /* Positioning for lines */
-    }
-  
-    nav li:first-child {
-      margin: 0 auto; /* Center align the first item */
-    }
-  
-    .post-date {
-      width: auto; /* Allow date to adjust width */
-      margin-left: auto; /* Move post date to the right */
-      margin-bottom: 5px; /* Adjust margin for smaller screens */
-      text-align: right; /* Align dates to the right */
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px solid #d0d0d0; 
-      padding-bottom: 5px; 
-      border-right: none;
-    }
-  
-    .post-date:last-child {
-      border-bottom: none; /* Remove border bottom for the last .post-date */
-    }
-  
-    .post-content {
-      padding: 10px; /* Adjust padding for smaller screens */
-    }
-  
-    article {
-      flex-direction: column; /* Stack content vertically */
-    }
-  
-    .post-date {
-      order: -1; /* Move post date to appear before the title */
-      margin-left: 0; /* Reset margin-left */
-      margin-right: 20px; /* Add margin to separate from content */
-    }
+  header {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
+  header h1 {
+    font-size: 60px;
+    white-space: normal;
+    line-height: 1.2;
+  }
+  nav {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  nav::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -5px;
+    border-top: 1px solid #d0d0d0;
+  }
+  nav ul {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav li {
+    margin-bottom: 10px;
+    position: relative;
+  }
+  nav li:first-child {
+    margin: 0 auto;
+  }
+  .post-date {
+    width: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    text-align: right;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 5px;
+    border-right: none;
+  }
+  .post-date:last-child {
+    border-bottom: none;
+  }
+  .post-content {
+    padding: 10px;
+  }
+  article {
+    flex-direction: column;
+  }
+  .post-date {
+    order: -1;
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}/*# sourceMappingURL=main.css.map */
