@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Playing Cards</title>
+    <link rel="stylesheet" href="playingcard01.css">
+</head>
+<body>
+    <!-- Card 1: Original Design -->
+    <div class="card" id="card1">
+        <svg viewBox="0 0 200 280">
+            <defs>
+                <!-- Pattern Definition -->
+                <pattern id="pattern1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="8" fill="#3498db" />
+                </pattern>
+            </defs>
+            <!-- Card Background with Pattern -->
+            <rect width="200" height="280" fill="url(#pattern1)" />
+            <!-- Decorative Shapes -->
+            <g fill="none" stroke="#e74c3c" stroke-width="2">
+                <rect x="30" y="40" width="140" height="200" rx="20" ry="20"/>
+                <circle cx="100" cy="140" r="50" />
+                <path d="M50,50 Q100,200 150,50" />
+            </g>
+        </svg>
+    </div>
+
+    <!-- Card 2: Using External SVG Pattern -->
+    <div class="card" id="card2">
+        <svg viewBox="0 0 200 280">
+            <defs>
+                <!-- Pattern Definition -->
+                <pattern id="pattern2" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                    <polygon points="25,0 50,15 50,35 25,50 0,35 0,15" fill="#2ecc71" />
+                </pattern>
+            </defs>
+            <!-- Card Background with Pattern -->
+            <rect width="200" height="280" fill="url(#pattern2)" />
+            <!-- Decorative Shapes -->
+            <g fill="none" stroke="#f1c40f" stroke-width="3">
+                <polygon points="20,20 180,20 160,260 40,260" />
+                <circle cx="100" cy="140" r="60" />
+                <path d="M40,40 C70,10 130,10 160,40" />
+            </g>
+        </svg>
+    </div>
+</body>
+</html>

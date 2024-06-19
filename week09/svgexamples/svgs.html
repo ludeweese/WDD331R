@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+<head>
+    <title>creating SVG </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<h1>My first SVG</h1>
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+
+<!-- rectangle -->
+<svg width="300" height="170" xmlns="http://www.w3.org/2000/svg">
+    <rect width="150" height="150" x="10" y="10" rx="20" ry="20"
+    style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+  </svg>
+
+<!-- ellipses -->
+<svg height="150" width="500" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="240" cy="100" rx="220" ry="30" fill="purple" />
+  <ellipse cx="220" cy="70" rx="190" ry="20" fill="lime" />
+  <ellipse cx="210" cy="45" rx="170" ry="15" fill="yellow" />
+</svg>
+
+<!-- line -->
+<svg height="210" width="300" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="0" x2="0" y2="200" style="stroke:red;stroke-width:14" />
+  </svg>
+
+<!-- polygon -->
+<svg height="260" width="500" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="220,10 300,210 170,250 123,234" style="fill:lime;stroke:purple;stroke-width:3" />
+</svg>
+
+
+<!-- polyline -->
+<svg height="180" width="500" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160"
+    style="fill:yellow;stroke:red;stroke-width:4" />
+  </svg>
+
+
+  <!-- path -->
+  <svg height="400" width="450" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Draw the paths -->
+    <path id="lineAB" d="M 100 350 l 150 -300" stroke="red" stroke-width="4"/>
+    <path id="lineBC" d="M 250 50 l 150 300" stroke="red" stroke-width="4"/>
+    <path id="lineMID" d="M 175 200 l 150 0" stroke="green" stroke-width="4"/>
+    <path id="lineAC" d="M 100 350 q 150 -300 300 0" stroke="blue" stroke-width="4" fill="none"/>
+    
+    <!-- Mark relevant points -->
+    <g stroke="black" stroke-width="3" fill="black">
+    <circle id="pointA" cx="100" cy="350" r="4" />
+    <circle id="pointB" cx="250" cy="50" r="4" />
+    <circle id="pointC" cx="400" cy="350" r="4" />
+    </g>
+    
+    <!-- Label the points -->
+    <g font-size="30" font-family="sans-serif" fill="green" text-anchor="middle">
+    <text x="100" y="350" dx="-30">A</text>
+    <text x="250" y="50" dy="-10">B</text>
+    <text x="400" y="350" dx="30">C</text>
+    </g>
+        
+    </svg>
+
+
+    
+  <!-- text -->
+  <svg height="40" width="200" xmlns="http://www.w3.org/2000/svg">
+    <text x="5" y="30" fill="none" stroke="red" font-size="35">I love SVG!</text>
+  </svg>
+
+  <!-- text-path -->
+  <svg height="200" width="350" xmlns="http://www.w3.org/2000/svg">
+    <path id="lineAC" d="M 30 180 q 150 -250 300 0" stroke="blue" stroke-width="2" fill="none"/>
+    <text style="fill:red;font-size:25px;">
+      <textPath href="#lineAC" textLength="100%" startOffset="20">I love SVG! I love SVG!</textPath>
+    </text>
+  </svg>
+
+  <!-- link-->
+
+  <svg height="100" width="200" xmlns="http://www.w3.org/2000/svg">
+    <a href="https://www.w3schools.com/graphics/" target="_blank">
+      <circle r="45" cx="50" cy="50" fill="red" />
+    </a>
+  </svg>
+
+   <!-- image -->
+   <svg height="200" width="300" xmlns="http://www.w3.org/2000/svg">
+    <image height="200" width="300" href="pulpitrock.jpg" />
+  </svg>
+
+  <!-- Marker -->
+  <svg height="250" width="350" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="circle" markerWidth="8" markerHeight="8" refX="5" refY="5">
+        <circle cx="5" cy="5" r="2" fill="black" />
+      </marker>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+      </marker>
+    </defs>
+    <polyline points="15,40 15,170 200,170" stroke="red" stroke-width="3" fill="none" marker-start="url(#circle)" marker-mid="url(#circle)" marker-end="url(#arrow)" />
+  </svg>
+
+  <!-- fill -->
+<svg width="600" height="220" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="50,10 0,190 100,190" fill="lime" />
+  <rect width="150" height="100" x="120" y="50" fill="blue" />
+  <circle r="45" cx="350" cy="100" fill="red" />
+  <text x="420" y="100" fill="red">I love SVG!</text>
+</svg>
+
+
+  <!-- stroke -->
+  <svg width="600" height="220" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="55,10 10,190 110,190" fill="lime" stroke="red" stroke-width="4" />
+    <rect width="150" height="100" x="120" y="50" fill="yellow" stroke="red" stroke-width="4" />
+    <circle r="45" cx="350" cy="100" fill="pink" stroke="blue" stroke-width="4" />
+    <text x="420" y="100" fill="red" stroke="blue" stroke-width="4">I love SVG!</text>
+  </svg>
+  
+  <!-- filters -->
+  <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="f1" x="0" y="0">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+      </filter>
+    </defs>
+    <rect width="90" height="90" fill="red" filter="url(#f1)" />
+  </svg>
+  
+  <!-- blur -->
+
+  <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="f2" x="0" y="0" xmlns="http://www.w3.org/2000/svg">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="55" />
+      </filter>
+    </defs>
+    <rect width="90" height="90" fill="yellow" filter="url(#f2)" />
+  </svg>
+
+  <!-- shadows -->
+  <svg height="110" width="110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="f1">
+        <feDropShadow dx="12" dy="14" stdDeviation="1" flood-opacity="0.7"/>
+      </filter>
+    </defs>
+    <rect width="90" height="90" fill="yellow" filter="url(#f1)" />
+  </svg>
+
+  <svg height="150" width="150" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="f3" width="120" height="120">
+        <feOffset in="SourceAlpha" dx="20" dy="20" />
+        <feGaussianBlur stdDeviation="10" />
+        <feBlend in="SourceGraphic" in2="blurOut" />
+      </filter>
+    </defs>
+    <rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f3)" />
+  </svg>
+
+    <!-- gradient -->
+
+    <svg height="150" width="400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad2" x1="0%" x2="100%" y1="0%" y2="0%">
+            <stop offset="0%" stop-color="yellow" />
+            <stop offset="50%" stop-color="green" />
+            <stop offset="100%" stop-color="red" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad2)" />
+      </svg>
+
+
+      <svg height="150" width="400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="grad3" cx="25%" cy="25%">
+            <stop offset="0%" stop-color="red" />
+            <stop offset="100%" stop-color="blue" />
+          </radialGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad3)" />
+      </svg>
+
+
+      <!-- pattern -->
+      <svg width="400" height="110" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="patt1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="10" cy="10" r="10" fill="red" />
+          </pattern>
+        </defs>
+      
+        <rect width="200" height="100" x="0" y="0" stroke="black" fill="url(#patt1)" />
+      </svg>
+   <!-- transformation -->
+      <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="40" height="40" fill="blue" />
+        <rect x="5" y="5" width="40" height="40" fill="red" transform="translate(50 0)" />
+      </svg>
+
+    <!-- clip/mask -->
+         <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="cut-bottom">
+                <rect x="0" y="0" width="200" height="50" />
+              </clipPath>
+            </defs>
+            <circle cx="100" cy="100" r="100" fill="red" clip-path="url(#cut-bottom)" />
+          </svg>
+
+    <!-- animation -->
+    <svg width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" style="fill:red;">
+          <animate
+            attributeName="cx"
+            begin="0s"
+            dur="8s"
+            from="50"
+            to="90%"
+            repeatCount="indefinite" />
+        </circle>
+      </svg>
+    <!-- scripting -->
+    <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+        <circle id="circle1" cx="50" cy="50" r="25" style="fill:red;">
+      </svg>
+      
+      <input type="button" value="Change Radius" onclick="changeRadius()" />
+      
+      <script>
+      function changeRadius() {
+        document.getElementById("circle1").setAttribute("r", "50");
+      }
+      </script>
+
+      <!--link to website w3schools-->
+      https://www.w3schools.com/graphics/svg_intro.asp
+
+      <!--ponder activity example-->
+      <svg >
+        <defs>
+          <!-- because we set the viewBox of this symbol to 30 30 when we put it in the SVG container it will get scaled up to fit.  Each unit in my symbol will get turned into 10 units (300/30 = 10) -->
+          <symbol id="symbol1" viewBox="0 0 30 30">
+            <rect width="30" height="30" />
+          </symbol>
+          <!-- if I use this pattern in the symbol above...notice it will not be the 15 units I specify...it will be 150 (15 *10). Because it is used in the symbol it will inherit the 10x scaling being applied to the symbol -->
+          <pattern id="pattern1" patternUnits="userSpaceOnUse" width="15" height="15">
+            <circle cx="7.5" cy="7.5" r="7.5" fill="red"/>
+          </pattern>
+          <!--If we try to reduce the height and width of the pattern we don't get what we expect...it reduces the viewable area...essentially cropping the pattern -->
+          <pattern id="pattern2" patternUnits="userSpaceOnUse" width="5" height="5" >
+            <circle cx="7.5" cy="7.5" r="7.5" fill="red"/>
+          </pattern>
+          <!-- One solution would be to reduce the size of all the parts of the pattern  like below.  but sometimes (like with complex paths) that is not easy -->
+          <pattern id="pattern3" patternUnits="userSpaceOnUse" width="5" height="5" >
+            <circle cx="2.5" cy="2.5" r="2.5" fill="red"/>
+          </pattern>
+          <!-- ...or we could apply a new viewBox to our pattern to allow it to scale the way we want.  Notice now the change in height/width is changing the size of the whole pattern...not just cropping -->
+          <pattern id="pattern4" patternUnits="userSpaceOnUse" width="5" height="5" viewBox="0 0 15 15">
+            <circle cx="7.5" cy="7.5" r="7.5" fill="blue"/>
+          </pattern>
+        </defs>
+      </svg>
+      
+      <div>
+      <figure>
+        <figcaption>pattern1</figcaption>
+        <svg width="300" height="300">
+          <use xlink:href="#symbol1" fill="url(#pattern1)"/>
+        </svg>
+      </figure>
+      <figure>
+        <figcaption>pattern2</figcaption>
+        <svg width="300" height="300">
+          <use xlink:href="#symbol1" fill="url(#pattern2)"/>
+        </svg>
+      </figure>
+      <figure>
+        <figcaption>pattern3</figcaption>
+        <svg width="300" height="300">
+          <use xlink:href="#symbol1" fill="url(#pattern3)"/>
+        </svg>
+      </figure>
+      <figure>
+        <figcaption>pattern4</figcaption>
+        <svg width="300" height="300">
+          <use xlink:href="#symbol1" fill="url(#pattern4)"/>
+        </svg>
+      </figure>
+      </div>
+</body>
+</html>
